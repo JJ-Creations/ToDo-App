@@ -1,0 +1,98 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9400FF;
+  color: white;
+}
+
+.App {
+  text-align: center;
+  padding:50px;
+}
+
+main {
+  border-radius: 6px;
+  background: #27005D;
+  margin: 50px auto;
+  width: 400px;
+  padding: 32px;
+}
+
+.heading{
+font-size:50px;
+}
+
+.card {
+display:flex;
+  font-size:20px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg,
+      rgba(255, 11, 20, 1) 0%,
+      rgba(255, 84, 17, 1) 100%);
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 350px;
+}
+
+
+.card:nth-child(4n + 1) {
+  background: linear-gradient(90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%);
+}
+
+.card:nth-child(4n + 2) {
+  background: linear-gradient(90deg,
+      rgb(255, 0, 136) 0%,
+      rgb(238, 96, 228) 100%);
+}
+
+.card:nth-child(4n + 3) {
+  background: linear-gradient(90deg,
+      rgb(0, 110, 255) 0%,
+      rgb(55, 172, 255) 100%);
+}
+
+
+
+#tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.task-input {
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.add-task-button{
+  border: none;
+  font-size:20px;
+  border-radius: 4px;
+  height: fit-content;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.completed-task-button{
+  font-size:15px;
+  border: none;
+  border-radius: 4px;
+  height: fit-content;
+  padding: 6px 8px;
+  cursor: pointer;
+}
