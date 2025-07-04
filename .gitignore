@@ -7,10 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+# Frontend
+/frontend/node_modules
+/frontend/dist
+/frontend/.env
+
+# Backend
+/backend/node_modules
+/backend/.env
+
+# Vite SSR builds
 dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
@@ -22,6 +29,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Environment files
-.env
