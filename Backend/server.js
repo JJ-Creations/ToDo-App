@@ -4,13 +4,14 @@ const cors = require("cors");
 
 const { createActivity, getActivity, deleteActivity } = require("./controllers/activityControllers");
 const app = express();
-app.use(express.json());
 
 app.use(cors({
   origin: "https://todoappjino.netlify.app",
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 }));
+app.use(express.json());
+
 const PORT = process.env.PORT || 8010;
 app.listen(PORT, () => console.log("Server running on", PORT));
 
