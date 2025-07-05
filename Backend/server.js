@@ -27,7 +27,5 @@ app.post("/", createActivity);
 app.get("/", getActivity);
 app.delete("/:id", deleteActivity);
 
-app.options("*", cors());
-
 const PORT = process.env.PORT || 8010;
 app.listen(PORT, () => console.log("🚀 Server running on", PORT));
