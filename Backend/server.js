@@ -5,21 +5,23 @@ const { createActivity, getActivity, deleteActivity } = require("./controllers/a
 const app = express();
 app.use(express.json());
 app.use(cors());
-const PORT = 8010;
+const PORT = process.env.PORT || 8010;
+app.listen(PORT, () => console.log("Server running on", PORT));
 
-const MONGODB_URL = "mongodb://localhost:27017/toDoAppDB";
+const MONGODB_URL =process.env.MONGODB_URL;
 
-mongoose.connect(MONGODB_URL).then(() => {
-    console.log("Database Successfully Connected");
-},
-    (err) => {
-        console.log("Connection Failed  ", err);
-    });
+mongoose.connect(MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => {
+    console.log("✅ MongoDB Connected Successfully");
+})
+.catch((err) => {
+    console.error("❌ MongoDB Connection Failed:", err);
+});
+
 
 app.post("/", createActivity);
 app.get("/", getActivity);
 app.delete("/:id", deleteActivity);
-
-app.listen(PORT, () => {;
-    console.log("Server is running on port: ", PORT);
-});
