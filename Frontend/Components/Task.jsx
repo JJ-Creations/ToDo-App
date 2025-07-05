@@ -6,7 +6,7 @@ const Task = () => {
     const [taskList, setTaskList] = useState([]);
 
     const handleGetTasks = async () => {
-        const response = await fetch("http://localhost:8010");
+        const response = await fetch("https://todo-backend-app-ooub.onrender.com");
         const data = await response.json();
         setTaskList(data.map((item) => ({
             id: item.task_id,
@@ -24,7 +24,7 @@ const Task = () => {
             task_id: newTask.id,
             task_name: newTask.text
         };
-        await fetch("http://localhost:8010", {
+        await fetch("https://todo-backend-app-ooub.onrender.com", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const Task = () => {
         await handleGetTasks();
     };
     const handleDelete = async (id) => {
-        await fetch("http://localhost:8010/" + id, {
+        await fetch("https://todo-backend-app-ooub.onrender.com/" + id, {
             method: "DELETE",
         });
         await handleGetTasks();
