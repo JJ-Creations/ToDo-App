@@ -29,4 +29,5 @@ app.get("/", getActivity);
 app.delete("/:id", deleteActivity);
 
 const PORT = process.env.PORT || 8010;
-app.listen(PORT, () => console.log("🚀 Server running on", PORT));
+console.log("🌐 PORT from environment:", PORT);
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
