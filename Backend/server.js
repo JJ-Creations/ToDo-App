@@ -8,7 +8,7 @@ const { createActivity, getActivity, deleteActivity } = require("./controllers/a
 const app = express();
 
 app.use(cors({
-  origin: "https://todoappjino.netlify.app",
+  origin:"https://todoappjino.netlify.app",
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 }));

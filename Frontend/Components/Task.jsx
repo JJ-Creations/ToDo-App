@@ -9,7 +9,7 @@ const Task = () => {
         const response = await fetch("https://todo-backend-app-ooub.onrender.com");
         const data = await response.json();
         setTaskList(data.map((item) => ({
-            id: item.task_id,
+            id: item._id,
             text: item.task_name
         })
         ));
@@ -21,7 +21,6 @@ const Task = () => {
 
     const handleNewTask = async (newTask) => {
         const body = {
-            task_id: newTask.id,
             task_name: newTask.text
         };
         await fetch("https://todo-backend-app-ooub.onrender.com", {
