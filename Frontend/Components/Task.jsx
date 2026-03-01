@@ -6,10 +6,10 @@ const Task = () => {
     const [taskList, setTaskList] = useState([]);
 
     const handleGetTasks = async () => {
-        const response = await fetch("https://todo-backend-app-ooub.onrender.com");
+        const response = await fetch("https://todo-backend-app-ooub.onrender.com/");
         const data = await response.json();
         setTaskList(data.map((item) => ({
-            id: item._id,
+            id: item.task_id,
             text: item.task_name
         })
         ));
@@ -21,9 +21,10 @@ const Task = () => {
 
     const handleNewTask = async (newTask) => {
         const body = {
+            task_id: newTask.id,
             task_name: newTask.text
         };
-        await fetch("https://todo-backend-app-ooub.onrender.com", {
+        await fetch("https://todo-backend-app-ooub.onrender.com/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
